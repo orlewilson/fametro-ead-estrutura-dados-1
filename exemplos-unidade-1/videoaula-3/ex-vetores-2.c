@@ -7,11 +7,12 @@
 
 int main()
 {
-    // declaração e inicialização automática de vetor 
-    char vogal[5] = {'a', 'e', 'i', 'o', 'u' };
+    // declaração e inicialização automática de vetor
+    char vogal[5] = {'a', 'e', 'i', 'o', 'u'};
 
     // leitura de valor no vetor
-    for (int cont=0; cont < 5; cont++){
+    for (int cont = 0; cont < 5; cont++)
+    {
         printf("[%d] = %c \n", cont, vogal[cont]);
     }
 

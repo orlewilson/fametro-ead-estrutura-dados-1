@@ -5,13 +5,14 @@
 
 #include <stdio.h>
 
-void imprimirLinhaDivisoria(){
-    printf("--------------------\n"); 
+void imprimirLinhaDivisoria()
+{
+    printf("--------------------\n");
 }
 
 int main()
 {
-    
+
     imprimirLinhaDivisoria();
     printf("Exemplo de Funcao\n");
     imprimirLinhaDivisoria();

@@ -9,10 +9,10 @@ int main()
 {
     // declaração de variáveis
     int valor;
-    
+
     printf("Digite um valor: ");
     scanf("%d", &valor); // para ler dados do console
     printf("Valor digitado foi %d!", valor);
-    
+
     return 0;
 }

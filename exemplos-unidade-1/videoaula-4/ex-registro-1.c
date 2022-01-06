@@ -13,11 +13,15 @@ int main()
     int idade;
     char telefone[11];
 
-    printf("Escreva seu nome:\n"); gets(nome);
-    printf("Escreva seu CPF:\n"); gets(cpf);
-    printf("Escreva seu telefone:\n"); gets(telefone);
-    printf("Escreva sua idade:\n"); scanf("%d", &idade);
-    
+    printf("Escreva seu nome:\n");
+    gets(nome);
+    printf("Escreva seu CPF:\n");
+    gets(cpf);
+    printf("Escreva seu telefone:\n");
+    gets(telefone);
+    printf("Escreva sua idade:\n");
+    scanf("%d", &idade);
+
     printf("--------------------\n");
     printf("Nome: %s \n", nome);
     printf("CPF: %s \n", cpf);

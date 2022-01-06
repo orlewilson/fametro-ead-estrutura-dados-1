@@ -21,5 +21,3 @@ _start:
 section .rodata
   msg: db "Hello, world!", 10
   msglen: equ $ - msg
-
-  

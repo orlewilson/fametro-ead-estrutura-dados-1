@@ -8,15 +8,19 @@
 int main()
 {
     int a, b;
-    a = 10; b = 20;
+    a = 10;
+    b = 20;
 
     // se
-    if (a > b) {
-        printf("a > b !!!!\n\n");    
-    } else {
-        printf("a < b !!!!\n\n");    
+    if (a > b)
+    {
+        printf("a > b !!!!\n\n");
+    }
+    else
+    {
+        printf("a < b !!!!\n\n");
     }
     // exemplos de operadores relacionais: ==, >, >=, <, <=, !=
-    
+
     return 0;
 }

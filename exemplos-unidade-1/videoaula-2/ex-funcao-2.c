@@ -5,10 +5,17 @@
 
 #include <stdio.h>
 
-void verificaNumero(int num){
-    // % - é o resto da divisão    
-    if (num % 2 == 0){ printf("%d é par\n", num);} 
-    else { printf("%d é impar\n", num); }
+void verificaNumero(int num)
+{
+    // % - é o resto da divisão
+    if (num % 2 == 0)
+    {
+        printf("%d é par\n", num);
+    }
+    else
+    {
+        printf("%d é impar\n", num);
+    }
 }
 
 int main()
