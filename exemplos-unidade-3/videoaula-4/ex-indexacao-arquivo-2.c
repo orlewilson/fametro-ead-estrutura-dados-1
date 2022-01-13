@@ -8,6 +8,22 @@
 #include <string.h>
 #include <time.h>
 
+int hashIndice(char *tituloFilme)
+{
+	int tamanho, primeiroCaracter, ultimoCaracter;
+
+	tamanho = strlen(tituloFilme);
+	primeiroCaracter = tituloFilme[0];
+	ultimoCaracter = tituloFilme[tamanho - 1];
+
+	int resultado = (tamanho * (ultimoCaracter - primeiroCaracter + 1)) % 5000;
+
+	// se houver valor negativo
+	if (resultado < 0) resultado *= -1; 
+
+	return resultado;
+}
+
 void pesquisarTituloArquivoSequencial(char *titulo)
 {
     // Definição do ponteiro para o arquivo
@@ -43,18 +59,6 @@ void pesquisarTituloArquivoSequencial(char *titulo)
 
     // Fecha o arquivo
     fclose(ptr_arq);
-}
-
-int hashIndice(char *tituloFilme)
-{
-    int tamanho, primeiroCaracter, ultimoCaracter;
-
-    tamanho = strlen(tituloFilme);
-    primeiroCaracter = tituloFilme[0];
-    ultimoCaracter = tituloFilme[tamanho - 1];
-
-    int resultado = ((tamanho * primeiroCaracter) + ultimoCaracter);
-    return resultado;
 }
 
 void pesquisarTituloArquivoIndexado(char *titulo)
@@ -101,26 +105,27 @@ void pesquisarTituloArquivoIndexado(char *titulo)
 int main()
 {
 
-    clock_t start_t, end_t, total_t;
+    clock_t start_t, end_t;
+    double total_t;
 
     printf("===== pesquisarTituloArquivoSequencial =====\n");
     start_t = clock();
-    pesquisarTituloArquivoSequencial("Easy Rider");
+    pesquisarTituloArquivoSequencial("Schizopolis");
     end_t = clock();
-
-    total_t = (end_t - start_t) / (CLOCKS_PER_SEC / 1000);
-
-    printf("Tempo execucao: %d\n", total_t);
+    
+    total_t = (double)(end_t - start_t) / (CLOCKS_PER_SEC);
+    printf("Tempo execucao (em segundos): %f\n", total_t);
     printf("===== =====\n\n");
 
     printf("===== pesquisarTituloArquivoIndexado =====\n");
     start_t = clock();
-    pesquisarTituloArquivoIndexado("Easy Rider");
+    pesquisarTituloArquivoIndexado("Schizopolis");
+    
     end_t = clock();
 
-    total_t = (end_t - start_t) / (CLOCKS_PER_SEC / 1000);
+    total_t = (double)(end_t - start_t) / (CLOCKS_PER_SEC);
 
-    printf("Tempo execucao: %d\n", total_t);
+    printf("Tempo execucao (em segundos): %f\n", total_t);
     printf("===== =====\n");
 
     return 0;

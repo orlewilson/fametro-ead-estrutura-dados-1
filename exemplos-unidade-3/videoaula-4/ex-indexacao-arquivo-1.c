@@ -15,7 +15,10 @@ int hashIndice(char *tituloFilme)
 	primeiroCaracter = tituloFilme[0];
 	ultimoCaracter = tituloFilme[tamanho - 1];
 
-	int resultado = ((tamanho * primeiroCaracter) + ultimoCaracter);
+	int resultado = (tamanho * (ultimoCaracter - primeiroCaracter + 1)) % 5000;
+
+	// se houver valor negativo
+	if (resultado < 0) resultado *= -1; 
 
 	return resultado;
 }
@@ -23,6 +26,11 @@ int hashIndice(char *tituloFilme)
 void criarArquivoIndexadoVazio(int qtdRegistros)
 {
 	FILE *fp;
+	
+	// apaga o arquivo indexado
+	remove("filmes-indexados.txt");
+	
+	// cria um novo arquivo indexado
 	fp = fopen("filmes-indexados.txt", "a+");
 
 	for (int cont = 0; cont < qtdRegistros; cont++)
@@ -101,9 +109,9 @@ void indexarFilmes(int qtdFilmes)
 int main()
 {
 
-	criarArquivoIndexadoVazio(350000);
+	criarArquivoIndexadoVazio(50000);
 
-	indexarFilmes(500);
+	indexarFilmes(10000);
 
 	return 0;
 }
